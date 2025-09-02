@@ -1,5 +1,8 @@
 package com.sk.array_d2;
 
+// Find the unique number in a given Array where all the elements are being
+// repeated twice with one value being unique.
+
 public class FindUnique {
 
 	static int findUnique(int[] arr) {
