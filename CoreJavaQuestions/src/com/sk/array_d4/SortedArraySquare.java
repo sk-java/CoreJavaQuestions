@@ -13,27 +13,18 @@ public class SortedArraySquare {
 		arr[j] = temp;
 	}
 
-	static void reverse(int[] arr) {
-		int i = 0, j = arr.length - 1;
-		while (i < j) {
-			swap(arr, i, j);
-			i++;
-			j--;
-		}
-	}
-
 	static int[] sortSquares(int arr[]) {
 		int n = arr.length;
 		int i = 0, j = n - 1;
 		int ans[] = new int[n];
-		int k = 0;
+		int k = n - 1;
 
 		while (i <= j) {
 			if (Math.abs(arr[i]) > Math.abs(arr[j])) {
-				ans[k++] = arr[i] * arr[i];
+				ans[k--] = arr[i] * arr[i];
 				i++;
 			} else {
-				ans[k++] = arr[j] * arr[j];
+				ans[k--] = arr[j] * arr[j];
 				j--;
 			}
 		}
@@ -44,7 +35,6 @@ public class SortedArraySquare {
 
 		int arr[] = { -10, -3, -2, 1, 4, 5 };
 		int[] ans = sortSquares(arr);
-		reverse(ans);
 		System.out.println(Arrays.toString(ans));
 	}
 
